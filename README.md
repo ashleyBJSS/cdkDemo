@@ -6,9 +6,10 @@ I have chosen to use typescript, but you can use whichever language you would li
 2) Install the cdk lambda package `npm install @aws-cdk/aws-lambda`. NOTE: Make sure when you install any new aws-cdk packages that all the version are the same.
 3) run `cdk bootstrap`. This will populate a given environment with the resources required by the CDK to perform deployments into that environment. You should only need to run this once.
 4) run `npm run build` just to check your initial setup is working correctly.
+5) Add the handler code that you want your lambda to run. If using typescript you will need to configure how you want to build your code, I built mine into a dist folder.
+6) Add the lambda to the cdk stack in the lib folder
 
-
-### Default Commands
+### Default commands
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
