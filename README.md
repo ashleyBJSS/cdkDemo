@@ -1,7 +1,8 @@
 # CDK demo app
 
 ## Prerequisites
-- Set up AWS credentials to the account you want to deploy your infrastructure to
+- Set up AWS credentials to the account you want to deploy your infrastructure to.
+- Install the cdk, I intalled globally using `npm install -g aws-cdk` If you are not set up with node/npm ecosystem you will want to do that, ecosia is your friend (or google if you must)
 
 ## Steps to build initial application
 I have chosen to use typescript, but you can use whichever language you would like, would be good to see it working in other languages if you have a different preference to me.
