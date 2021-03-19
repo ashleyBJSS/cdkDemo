@@ -1,0 +1,13 @@
+{
+  "name": "lambdalayers",
+  "version": "1.0.0",
+  "description": "Node modules required by the lambda code",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "npm install && mkdir -p nodejs && cp -r node_modules nodejs && cd ../../dist && mkdir -p lambdaLayer && cd lambdaLayer && rm -r -f nodejs && mv ../../src/lambdaLayer/nodejs ."
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.9.0"
+  }
+}

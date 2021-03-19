@@ -19,6 +19,10 @@ I have chosen to use typescript, but you can use whichever language you would li
 7) Run `npm run build` to build your typescript
 8) Run `cdk deploy` to deploy your application - if your wiring worked this should deploy your working lambda.
 
+### Add dynamodb
+1) Run `npm install @aws-cdk/aws-dynamodb``
+2) Include the dynamo db in the stack file
+
 ### Default commands
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
