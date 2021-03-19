@@ -19,6 +19,13 @@ I have chosen to use typescript, but you can use whichever language you would li
 7) Run `npm run build` to build your typescript
 8) Run `cdk deploy` to deploy your application - if your wiring worked this should deploy your working lambda.
 
+### Adding API Gateway
+1) Run `npm install @aws-cdk/aws-apigateway`
+2) Import the api gateway code into your stack file `import * as apigw from '@aws-cdk/aws-apigateway';`. NOTE: the version of the installed package needs to match all the other aws-cdk packages.
+3) I created a RestApi and added a get method to the previously created lambda, but there are multiple ways you can set up an api gateway!
+4) Adding the Resouce (path) and method (lambda function) ``` apiGateway.root.addResource("Test").addMethod("GET", new apigw.LambdaIntegration(testLambda))```
+5) Run `cdk deploy`, this will give you a  description of what will be deployed
+
 ### Add dynamodb
 1) Run `npm install @aws-cdk/aws-dynamodb``
 2) Include the dynamo db in the stack file

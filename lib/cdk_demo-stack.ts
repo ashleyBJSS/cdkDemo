@@ -1,5 +1,6 @@
 import * as cdk from '@aws-cdk/core';
 import * as lambda from '@aws-cdk/aws-lambda';
+import * as apigw from '@aws-cdk/aws-apigateway'
 import {AttributeType, Table, TableProps} from '@aws-cdk/aws-dynamodb';
 
 export class CdkDemoStack extends cdk.Stack {
@@ -32,6 +33,14 @@ export class CdkDemoStack extends cdk.Stack {
       layers: [lambdaLayer]
     }
     const testLambda = new lambda.Function(this, 'testLambdaId', testLambdaProps);
+
+    const lambdaRestApiProps: apigw.RestApiProps = {
+      deploy: true
+    }
+    const apiGateway = new apigw.RestApi(this,"Rest Api", lambdaRestApiProps)
+
+    // @ts-ignore
+    apiGateway.root.addResource("Test").addMethod("GET", new apigw.LambdaIntegration(testLambda))
 
     //@ts-ignore
     databaseTable.grantReadWriteData(testLambda)
